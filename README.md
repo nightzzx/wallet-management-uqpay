@@ -40,4 +40,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deploy on Vercel
 
-Check out my production site on (https://wallet-management-uqpay-ok69apei2-nightzzxs-projects.vercel.app/login).
+Check out my production site on (https://wallet-management-uqpay.vercel.app/login).
