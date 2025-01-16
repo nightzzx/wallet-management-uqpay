@@ -78,7 +78,7 @@ const AddressList = () => {
         localStorage.setItem("walletDetails", JSON.stringify(item_list));
         setLoading(false);
       } else {
-        alert("Failed to fetch wallet addresses:");
+        alert(result.message);
       }
     } catch (error) {
       console.error("Failed to fetch wallet addresses:", error);
@@ -155,8 +155,8 @@ const AddressList = () => {
     onGlobalFilterChange: setGlobalFilter,
     getFilteredRowModel: getFilteredRowModel(),
   });
-  console.log("Global Filter Value:", globalFilter);
-  console.log("Filtered Data:", table.getFilteredRowModel().rows);
+  // console.log("Global Filter Value:", globalFilter);
+  // console.log("Filtered Data:", table.getFilteredRowModel().rows);
 
   if (loading) {
     return (

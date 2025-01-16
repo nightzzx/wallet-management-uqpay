@@ -10,14 +10,12 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const currentPath = usePathname();
   const [userEmail, setUserEmail] = useState("");
 
-  console.log(currentPath, "currentPath is");
-  const handleLogout = () => {
+  const handleLogout = async () => {
     localStorage.removeItem("walletDetails");
     localStorage.removeItem("authToken");
     localStorage.removeItem("refreshToken");
     localStorage.removeItem("userEmail");
-    document.cookie =
-      "session=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    await fetch("/api/logout", { method: "POST" });
     router.push("/login");
   };
   useEffect(() => {

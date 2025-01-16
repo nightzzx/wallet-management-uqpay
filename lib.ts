@@ -19,7 +19,7 @@ export async function loginFunction(
   expired_at: number,
   authToken: string
 ) {
-  console.log(authToken, "authToken from lib.ts");
+  // console.log(authToken, "authToken from lib.ts");
 
   const session = await encrypt({ emailAddress }, expired_at);
 
