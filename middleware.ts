@@ -9,17 +9,17 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL("/dashboard", req.url));
   }
 
-  // if (
-  //   !session &&
-  //   ["/dashboard", "/wallet"].some((path) => pathname.startsWith(path))
-  // ) {
-  //   const loginUrl = new URL("/login", req.url);
-  //   loginUrl.searchParams.set(
-  //     "message",
-  //     "Session expired, please login again."
-  //   );
-  //   return NextResponse.redirect(loginUrl);
-  // }
+  if (
+    !session &&
+    ["/dashboard", "/wallet"].some((path) => pathname.startsWith(path))
+  ) {
+    const loginUrl = new URL("/login", req.url);
+    loginUrl.searchParams.set(
+      "message",
+      "Session expired, please login again."
+    );
+    return NextResponse.redirect(loginUrl);
+  }
 
   return NextResponse.next();
 }
